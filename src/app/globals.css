@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #100E0F;
+  --color-ink-2: #2A2220;
+  --color-ink-3: #3B3129;
+  --color-cream: #FFFFFF;
+  --color-cream-2: #FDF6F2;
+  --color-teal: #E3A087;
+  --color-teal-deep: #8E4D3A;
+  --color-teal-bright: #F4D2C0;
+  --color-teal-wash: #FDF0EA;
+  --color-gold: #E5B68A;
+  --color-gold-bright: #F0C6A5;
+  --color-line: #F2E4DD;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #100E0F;
+  color: #FBF5F2;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+::selection {
+  background: var(--color-teal);
+  color: #fff;
+}
+
+.serif-italic {
+  font-style: italic;
+  color: var(--color-teal);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-teal);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+  html { scroll-behavior: auto; }
+}
